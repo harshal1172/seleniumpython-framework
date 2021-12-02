@@ -46,7 +46,7 @@ class WebDriverInstance():
             driver = webdriver.Firefox()
         elif self.browser == "chrome":
             # Set chrome driver
-            driver = webdriver.Chrome(executable_path="/home/harshal/PycharmProjects/Driver/chromedriver")
+            driver = webdriver.Chrome(executable_path="driver/chromedriver")
         else:
             driver = webdriver.Firefox()
         # Setting Driver Implicit Time out for An Element
