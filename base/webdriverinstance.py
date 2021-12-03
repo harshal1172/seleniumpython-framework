@@ -10,6 +10,8 @@ Example:
 """
 import traceback
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
 
 class WebDriverInstance():
 
@@ -46,7 +48,11 @@ class WebDriverInstance():
             driver = webdriver.Firefox()
         elif self.browser == "chrome":
             # Set chrome driver
-            driver = webdriver.Chrome(executable_path="driver/chromedriver",options='--headless')
+            chrome_options = Options()
+            chrome_options.add_argument('--headless')
+            chrome_options.add_argument('--no-sandbox')
+            chrome_options.add_argument('--disable-dev-shm-usage')
+            driver = webdriver.Chrome(executable_path="driver/chromedriver",chrome_options='--headless')
         else:
             driver = webdriver.Firefox()
         # Setting Driver Implicit Time out for An Element
