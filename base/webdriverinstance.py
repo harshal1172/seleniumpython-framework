@@ -52,7 +52,7 @@ class WebDriverInstance():
             chrome_options.add_argument('--headless')
             chrome_options.add_argument('--no-sandbox')
             chrome_options.add_argument('--disable-dev-shm-usage')
-            driver = webdriver.Chrome(executable_path="driver/chromedriver",chrome_options='--headless')
+            driver = webdriver.Chrome(executable_path="driver/chromedriver",options=chrome_options)
         else:
             driver = webdriver.Firefox()
         # Setting Driver Implicit Time out for An Element
